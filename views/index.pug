@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+  head
+    title Heroes!
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+  body
+    h1(class = 'display-4 m-2') The list of your HEROES!
+    for row in rows
+      div
+        a(class = 'btn btn-primary m-1' href = '/delete/'+ row.id) delete 
+        a(class = 'btn btn-primary m-1' href = '/edit/'+ row.id) #{row.name}
+
+    div
+    h3(class = 'display-8 m-2') Add name of your favourite HERO!    
+      form(action='/add' method='POST')
+        input( class = 'm-2' )(type='text' name='name' value='') 
+
